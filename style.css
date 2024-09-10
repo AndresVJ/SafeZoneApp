@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #f2b118;
+    --primary-hover: #de8e1ee7;
+    --secondary-color: #2ab7b7;
+    --background-color: #f0f2f5;
+    --white: #ffffff;
+    --text-color: #1c1e21;
+    --box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+.auth-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    max-width: 400px;
+    width: 100%;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.content-area {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    gap: 40px;  /* Aumentado para separar más las secciones */
+}
+
+.section {
+    flex: 1;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    min-width: 250px;
+    max-width: 300px;  /* Añadido para mantener las secciones centradas */
+    transition: transform 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+}
+
+h1, h2, h3 {
+    color: var(--primary-color);
+    margin: 0 0 20px 0;
+}
+
+input, button, textarea, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.nav-container h1 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: auto;  /* Empuja "Safe Zone" a la izquierda */
+}
+
+nav {
+    display: flex;
+    margin-left: auto;  /* Empuja la navegación hacia la derecha */
+    margin-right: 20px;  /* Espacio entre la navegación y la sección de perfil */
+}
+
+.nav-item {
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    margin-left: 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-section span {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.profile-section button {
+    padding: 8px 15px;
+    font-size: 14px;
+    margin-left: 10px;
+    background-color: var(--secondary-color);
+}
+
+.profile-section button:hover {
+    background-color: darken(var(--secondary-color), 10%);
+}
+
+.profile-details {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Añadir el botón de cerrar sesión dentro de los detalles del perfil */
+.profile-details button {
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .nav-container h1 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+        text-align: center;
+        flex-grow: 1;
+    }
+
+    .profile-section {
+        order: 2;
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .content-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        margin: 10px 0;
+        max-width: none;
+    }
+
+    .auth-form {
+        padding: 30px;
+        margin: 0 15px;
+    }
+}

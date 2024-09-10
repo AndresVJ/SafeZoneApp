@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Zone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loginSection" class="auth-container">
+        <div class="auth-form">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="loginUsername" placeholder="Nombre de usuario" required>
+                <input type="password" id="loginPassword" placeholder="Contraseña" required>
+                <input type="number" id="loginSchoolCode" placeholder="Código de escuela" required>
+                <select id="userType">
+                    <option value="student">Estudiante</option>
+                    <option value="teacher">Docente</option>
+                </select>
+                <button type="submit">Ingresar</button>
+            </form>
+            <p>¿No tienes una cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+        </div>
+    </div>
+
+    <div id="registerSection" class="auth-container" style="display: none;">
+        <div class="auth-form">
+            <h2>Registro</h2>
+            <form id="registerForm">
+                <input type="text" id="registerFullName" placeholder="Nombres y apellidos completos" required>
+                <input type="text" id="registerUsername" placeholder="Nombre de usuario" required>
+                <input type="password" id="registerPassword" placeholder="Contraseña" required>
+                <input type="text" id="registerDNI" placeholder="Número de DNI" required>
+                <select id="registerUserType">
+                    <option value="student">Estudiante</option>
+                    <option value="teacher">Docente</option>
+                </select>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p>¿Ya tienes una cuenta? <a href="#" id="showLogin">Inicia sesión</a></p>
+        </div>
+    </div>
+
+    <header id="navBar" class="nav-bar" style="display: none;">
+        <div class="nav-container">
+            <h1>Safe Zone</h1>
+            <nav>
+                <a href="#" class="nav-item active" data-section="1">Reporte</a>
+                <a href="#" class="nav-item" data-section="2">Diario</a>
+                <a href="#" class="nav-item" data-section="3">Casos</a>
+            </nav>
+            <div class="profile-section">
+                <span id="userName"></span>
+                <button id="toggleProfile">Perfil</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="profileSection" class="profile-details" style="display: none;">
+        <h3>Perfil de Usuario</h3>
+        <p><strong>Nombre completo:</strong> <span id="profileFullName"></span></p>
+        <p><strong>Nombre de usuario:</strong> <span id="profileUsername"></span></p>
+        <p><strong>DNI:</strong> <span id="profileDNI"></span></p>
+        <p><strong>Tipo de usuario:</strong> <span id="profileUserType"></span></p>
+        <button id="logoutButton">Cerrar Sesión</button>
+    </div>
+
+    <main id="mainContent" class="container" style="display: none;">
+        <div class="content-area">
+            <section id="section1" class="section">
+                <h2>Reporte</h2>
+                <textarea id="userInput" rows="4" placeholder="Escribe tu reporte aquí..."></textarea>
+                <button id="submitReport">Enviar</button>
+            </section>
+            <section id="section2" class="section">
+                <h2>Diario</h2>
+                <p id="diaryEntry"></p>
+            </section>
+            <section id="section3" class="section">
+                <h2>Casos</h2>
+                <div id="casesContent"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
